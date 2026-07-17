@@ -74,6 +74,22 @@ md2pdf docs/index.md
 md2pdf docs/index.md -o ~/Desktop/手册.pdf
 ```
 
+### 直接把文件拖进终端
+
+不带参数运行,进入**交互模式**,按提示把主 `.md` 从访达/文件管理器**拖进终端**再回车即可
+——会自动处理拖拽产生的转义空格 `\ `、单/双引号和末尾空格:
+
+```text
+$ md2pdf
+md2pdf —— 把主 Markdown 文件拖进终端,回车即可生成 PDF。
+
+① 主 .md 文件(拖进来 / 粘贴路径,回车):/Users/me/docs/index.md
+② 输出 PDF 路径(直接回车=源目录同名 .pdf):⏎
+✓ 已生成:/Users/me/docs/index.pdf
+```
+
+> 也可以先敲 `md2pdf `(带空格)再把文件拖进来——这种情况下由 shell 补全路径,同样可用。
+
 ## 拖拽 GUI
 
 ```bash
