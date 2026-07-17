@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+
+# 产物 / 系统
+*.pdf
+.DS_Store
+
+# 允许示例目录里的说明,但忽略示例生成的 pdf(上面的 *.pdf 已覆盖)

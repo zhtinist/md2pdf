@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md2pdf-linked"
+version = "1.0.0"
+description = "给一个主 Markdown 文件,自动顺着链接收集全部关联 .md 并生成单个 PDF(命令行 + 拖拽 GUI)。"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [{ name = "HTZHU", email = "zhtinist@gmail.com" }]
+keywords = ["markdown", "pdf", "pandoc", "chrome", "documentation", "cjk"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# 拖拽功能(可选)。不装也能用:GUI 会降级为「点击选择文件」。
+gui = ["tkinterdnd2>=0.3"]
+
+[project.urls]
+Homepage = "https://github.com/zhtinist/md2pdf"
+Repository = "https://github.com/zhtinist/md2pdf"
+
+[project.scripts]
+md2pdf = "md2pdf.cli:main"
+
+[project.gui-scripts]
+md2pdf-gui = "md2pdf.gui:main"
+
+[tool.setuptools]
+packages = ["md2pdf"]
+
+[tool.setuptools.package-data]
+md2pdf = ["style.css"]
